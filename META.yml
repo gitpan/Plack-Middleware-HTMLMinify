@@ -15,4 +15,4 @@ name: Plack-Middleware-HTMLMinify
 requires:
   HTML::Packer: 0
   Plack: 0
-version: 0.1
+version: 0.2

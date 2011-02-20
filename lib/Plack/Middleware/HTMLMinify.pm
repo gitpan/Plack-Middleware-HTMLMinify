@@ -1,6 +1,9 @@
 # ABSTRACT: Plack middleware to minify HTML on-the-fly
 
 package Plack::Middleware::HTMLMinify;
+BEGIN {
+  $Plack::Middleware::HTMLMinify::VERSION = '0.2';
+}
 
 use strict;
 use warnings;
@@ -10,10 +13,8 @@ use warnings;
 Plack::Middleware::HTMLMinify
 
 =head1 VERSION
-Version 0.1
-=cut
 
-our $VERSION = '0.1';
+version 0.2
 
 =head1 DESCRIPTION
 
@@ -44,7 +45,12 @@ sub call {
 	my $res = shift;
 
 	my $h = Plack::Util::headers($res->[1]);
+
+	# Only process text/html.
 	return unless $h->get('Content-Type') =~ qr{text/html};
+
+	# Don't touch compressed content.
+	return if defined $h->get('Content-Encoding');
 
 	$self->packer->minify(\$res->[2][0], $self->opt);
 	return;
@@ -61,6 +67,14 @@ sub prepare_app {
 =head1 AUTHOR
 
 Gea-Suan Lin, C<< <gslin at gslin.org> >>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2011 Gea-Suan Lin.
+
+This software is released under 3-clause BSD license. See
+L<http://www.opensource.org/licenses/bsd-license.php> for more
+information.
 
 =cut
 
