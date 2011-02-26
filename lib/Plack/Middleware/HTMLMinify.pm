@@ -2,7 +2,7 @@
 
 package Plack::Middleware::HTMLMinify;
 BEGIN {
-  $Plack::Middleware::HTMLMinify::VERSION = '0.2';
+  $Plack::Middleware::HTMLMinify::VERSION = '0.3';
 }
 
 use strict;
@@ -10,11 +10,11 @@ use warnings;
 
 =head1 NAME
 
-Plack::Middleware::HTMLMinify
+Plack::Middleware::HTMLMinify - Plack middleware for HTML minify
 
 =head1 VERSION
 
-version 0.2
+version 0.3
 
 =head1 DESCRIPTION
 
@@ -51,6 +51,9 @@ sub call {
 
 	# Don't touch compressed content.
 	return if defined $h->get('Content-Encoding');
+
+	# If response body is undefined then ignore it.
+	return if !defined $res->[2][0];
 
 	$self->packer->minify(\$res->[2][0], $self->opt);
 	return;

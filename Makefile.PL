@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     'HTML::Packer' => '0',
     'Plack' => '0'
   },
-  'VERSION' => '0.2',
+  'VERSION' => '0.3',
   'test' => {
     'TESTS' => 't/*.t'
   }

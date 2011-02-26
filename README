@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Plack-Middleware-HTMLMinify,
-version 0.2:
+version 0.3:
 
   Plack middleware to minify HTML on-the-fly
 
