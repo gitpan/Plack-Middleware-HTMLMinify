@@ -11,7 +11,12 @@ use ExtUtils::MakeMaker 6.31;
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'Plack middleware to minify HTML on-the-fly',
   'AUTHOR' => 'Gea-Suan Lin <gslin@gslin.org>',
-  'BUILD_REQUIRES' => {},
+  'BUILD_REQUIRES' => {
+    'HTTP::Request::Common' => '0',
+    'Plack::Builder' => '0',
+    'Plack::Test' => '0',
+    'Test::More' => '0'
+  },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
   },
@@ -21,9 +26,12 @@ my %WriteMakefileArgs = (
   'NAME' => 'Plack::Middleware::HTMLMinify',
   'PREREQ_PM' => {
     'HTML::Packer' => '0',
-    'Plack' => '0'
+    'Plack::Middleware' => '0',
+    'Plack::Util' => '0',
+    'Plack::Util::Accessor' => '0',
+    'parent' => '0'
   },
-  'VERSION' => '0.3',
+  'VERSION' => '0.4',
   'test' => {
     'TESTS' => 't/*.t'
   }
