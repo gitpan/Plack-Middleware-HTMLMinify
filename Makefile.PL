@@ -13,12 +13,14 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Gea-Suan Lin <gslin@gslin.org>',
   'BUILD_REQUIRES' => {
     'HTTP::Request::Common' => '0',
+    'Module::Build' => '0.3601',
     'Plack::Builder' => '0',
     'Plack::Test' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.31',
+    'Module::Build' => '0.3601'
   },
   'DISTNAME' => 'Plack-Middleware-HTMLMinify',
   'EXE_FILES' => [],
@@ -31,7 +33,7 @@ my %WriteMakefileArgs = (
     'Plack::Util::Accessor' => '0',
     'parent' => '0'
   },
-  'VERSION' => '0.4',
+  'VERSION' => '0.5',
   'test' => {
     'TESTS' => 't/*.t'
   }

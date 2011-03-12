@@ -2,7 +2,7 @@
 
 package Plack::Middleware::HTMLMinify;
 BEGIN {
-  $Plack::Middleware::HTMLMinify::VERSION = '0.4';
+  $Plack::Middleware::HTMLMinify::VERSION = '0.5';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Plack::Middleware::HTMLMinify - Plack middleware for HTML minify
 
 =head1 VERSION
 
-version 0.4
+version 0.5
 
 =head1 DESCRIPTION
 
@@ -53,7 +53,10 @@ sub call {
 	return if defined $h->get('Content-Encoding');
 
 	# Concat all content, and if response body is undefined then ignore it.
-	my $body = join '', @{$res->[2]};
+	my $body = [];
+	Plack::Util::foreach($res->[2], sub { push @$body, $_[0]; });
+	$body = join '', @$body;
+
 	return if '' eq $body;
 
 	# Minify and replace it.

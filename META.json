@@ -14,9 +14,15 @@
    },
    "name" : "Plack-Middleware-HTMLMinify",
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.31",
+            "Module::Build" : "0.3601"
          }
       },
       "runtime" : {
@@ -46,6 +52,6 @@
          "web" : "https://github.com/gslin/plack-middleware-htmlminify-perl"
       }
    },
-   "version" : "0.4"
+   "version" : "0.5"
 }
 
