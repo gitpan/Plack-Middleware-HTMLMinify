@@ -22,7 +22,7 @@ my %module_build_args = (
     'Gea-Suan Lin <gslin@gslin.org>'
   ],
   'dist_name' => 'Plack-Middleware-HTMLMinify',
-  'dist_version' => '0.5.1',
+  'dist_version' => '0.6.0',
   'license' => 'bsd',
   'module_name' => 'Plack::Middleware::HTMLMinify',
   'recommends' => {},

@@ -2,7 +2,7 @@
 
 package Plack::Middleware::HTMLMinify;
 BEGIN {
-  $Plack::Middleware::HTMLMinify::VERSION = '0.5.1';
+  $Plack::Middleware::HTMLMinify::VERSION = '0.6.0';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Plack::Middleware::HTMLMinify - Plack middleware for HTML minify
 
 =head1 VERSION
 
-version 0.5.1
+version 0.6.0
 
 =head1 DESCRIPTION
 
