@@ -2,7 +2,7 @@
 
 package Plack::Middleware::HTMLMinify;
 BEGIN {
-  $Plack::Middleware::HTMLMinify::VERSION = '0.5';
+  $Plack::Middleware::HTMLMinify::VERSION = '0.5.1';
 }
 
 use strict;
@@ -14,7 +14,7 @@ Plack::Middleware::HTMLMinify - Plack middleware for HTML minify
 
 =head1 VERSION
 
-version 0.5
+version 0.5.1
 
 =head1 DESCRIPTION
 
@@ -47,7 +47,9 @@ sub call {
 	my $h = Plack::Util::headers($res->[1]);
 
 	# Only process text/html.
-	return unless $h->get('Content-Type') =~ qr{text/html};
+	my $ct = $h->get('Content-Type');
+	return unless defined $ct;
+	return unless $ct =~ qr{text/html};
 
 	# Don't touch compressed content.
 	return if defined $h->get('Content-Encoding');

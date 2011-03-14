@@ -27,4 +27,4 @@ requires:
 resources:
   homepage: https://github.com/gslin/plack-middleware-htmlminify-perl
   repository: https://github.com/gslin/plack-middleware-htmlminify-perl.git
-version: 0.5
+version: 0.5.1

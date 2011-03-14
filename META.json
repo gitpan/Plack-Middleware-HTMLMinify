@@ -52,6 +52,6 @@
          "web" : "https://github.com/gslin/plack-middleware-htmlminify-perl"
       }
    },
-   "version" : "0.5"
+   "version" : "0.5.1"
 }
 
