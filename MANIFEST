@@ -1,5 +1,4 @@
 Build.PL
-Changes
 LICENSE
 MANIFEST
 META.json
@@ -7,9 +6,7 @@ META.yml
 Makefile.PL
 README
 dist.ini
-lib/Plack/Middleware/HTMLMinify.pm
+lib/Mojolicious/Plugin/MarkaplRenderer.pm
 t/00load.t
-t/basic.t
-t/multiple-part.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
