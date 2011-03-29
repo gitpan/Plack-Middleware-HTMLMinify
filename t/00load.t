@@ -1,8 +1,8 @@
 #!perl -T
 
-use Mojolicious::Plugin::MarkaplRenderer;
+use Plack::Middleware::HTMLMinify;
 use Test::More;
 
-use_ok('Mojolicious::Plugin::MarkaplRenderer');
+use_ok('Plack::Middleware::HTMLMinify');
 
 done_testing;
